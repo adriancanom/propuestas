@@ -10,14 +10,14 @@ echo  Carpeta: %CD%
 echo.
 
 git add -A
-git commit -m "Actualizar propuestas"
-git push origin main
+git commit -m "update"
+git push
 
 if %errorlevel% equ 0 (
     echo.
     echo  ============================================
-    echo   Listo! Se publicara en ~1 minuto en:
-    echo   https://adriancanom.github.io/propuestas-mvip/
+    echo   Listo! Tu sitio se actualiza en ~1 minuto
+    echo   https://adriancanom.github.io/propuestas/
     echo  ============================================
 ) else (
     echo.
