@@ -351,13 +351,16 @@
 
   /* ===== GLASS CARDS ===== */
   .glass-card {
-    background: rgba(26,26,26,0.7);
-    border: 1px solid var(--border-glass);
+    background: rgba(20,20,20,0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(81,221,125,0.15);
     border-radius: 12px;
     padding: 24px;
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .glass-card::before {
@@ -426,12 +429,15 @@
   }
 
   .module-item {
-    background: rgba(26,26,26,0.7);
-    border: 1px solid var(--border-glass);
+    background: rgba(20,20,20,0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(81,221,125,0.12);
     border-radius: 10px;
     padding: 22px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
   .module-item::before {
@@ -468,7 +474,9 @@
 
   /* ===== PRICING ===== */
   .pricing-card {
-    background: linear-gradient(135deg, rgba(81,221,125,0.08), rgba(26,26,26,0.9));
+    background: linear-gradient(135deg, rgba(81,221,125,0.1), rgba(20,20,20,0.7));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(81,221,125,0.25);
     border-radius: 14px;
     padding: 32px;
@@ -476,6 +484,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 40px rgba(81,221,125,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .pricing-card::before {
@@ -553,8 +562,10 @@
     width: 40px;
     height: 40px;
     min-width: 40px;
-    background: rgba(81,221,125,0.12);
-    border: 2px solid rgba(81,221,125,0.3);
+    background: rgba(81,221,125,0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(81,221,125,0.35);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -562,6 +573,7 @@
     font-size: 14px;
     font-weight: 700;
     color: var(--green-primary);
+    box-shadow: 0 0 20px rgba(81,221,125,0.15);
   }
 
   .timeline-content h4 {
@@ -598,12 +610,15 @@
 
   .tech-tag {
     background: rgba(81,221,125,0.08);
-    border: 1px solid rgba(81,221,125,0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(81,221,125,0.18);
     border-radius: 6px;
     padding: 6px 14px;
     font-size: 13px;
     color: var(--green-primary);
     font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
 
   /* ===== SECTION FOOTER ===== */
@@ -658,11 +673,14 @@
   }
 
   .stat-item {
-    background: rgba(26,26,26,0.7);
-    border: 1px solid var(--border-glass);
+    background: rgba(20,20,20,0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(81,221,125,0.1);
     border-radius: 10px;
     padding: 20px 12px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03);
   }
 
   .stat-item .stat-num {
