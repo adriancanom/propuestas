@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing VIP® — Propuesta Web CX & Mystery Shopping</title>
+
+<style>
+  
+  @font-face {
+    font-family: 'Geist';
+    src: url(data:font/woff2;base64,d09GMgABAAAAABY4ABEAAAAALAAAABXgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbgTAcNgZgAIEUCCoJhzQRDAqrEKY6C0gAATYCJANYBCAFhwQHgVgMgRQbUCizItgeoL0DwK6rKpL9fxLIhkJN9LQN1YBiCcMlPWRLLpJONKvHxBRTyOXVKKhOV1VX6a6u2tmapLcm73aGkzEUcVq4C4fzcNyT/89/zv3O/c6dhdUFYE9MABXhLwzXq9q1DZKgoM44qQNmZmZ+/MIoAPwXoLgw+1/19TtREn57EV4f8fXRSZ1mxG26oIuuuKK9qttqLtqrBup/VR/UX5Pq6r+uqP+uqgLcVd9dNQ9gBrhrXpYqAAHMZ8LgvqNxw2XQXN/1C3ILi0tKq+u3bNux55BDjz722ONPPPX0Cy6+9MLLR0+f+ej8+TXrN2zeumPX7r37Dxx4/LHHBWImCUdkSYxsHhCZ0t/9IVAwC6g4C5AEKOB8wKVvgXoJKB7MAGoLiO0AoYOA2A2Q9AkkNi+Q+mMSjLMACkJQD4J+AUEnDEaEQRFgYJHEYU8SAqIBBCAFYoIFVBBBCBuKODDjYUBWBMQAgxMY/CWBLCcIEoMoEQQ5lCBnEeRSgpJNUBsIWvGB2voHkA0HkT9e0FoW4KbFJxLWB1PERCKJSLIjZYaUTJCzCSiIoJQSNGKC7kkwSAmGGcGYIJgQTAmCBcGSoFcRrAg2CYT+Q7AvgQMIHELgYAJHEDiawHEETiJwBoHzCFxB4HoCtxF4kMCjBO4icDeBewncp8C+BA4gcAyBkwhcTeBmAncReIjAMwTeJPAegc8JfE/gRwK/EPibwB/BAlZwgxdYIQZJ0KjJYYXbXXfdc99DL3zmjU99+9NvfOGLX/naZz73uW9959s/+MnPfvrbX//mC6xIL/pF1VHVhW6u/4fu9yDaWaIDOomVYCMBgMrwLvqMIYaBlgcYpLRBhEQc0hEAUXo6oANSBgAIJYMCKlSCxhS0VFLUqpYqVQpBJgMqr4KGVA/2sNAOATkpVAQZUgUVIASlIqoHGhTVvchhhNAAAiICAdqHqD0JGkGwGIK2E2wtAMECCDbH4zYUQSACBZJhKZVyRhWSiDm0TOpJqkKFmIOBJpwCgKYJSgSSvKAYsLIKy1AJXAikSlgKQAJQIjACUCMFNqxQTMjbpf4P64mK16bSA13xUkiL2qdJ4AGvXOMaS0INCY7H8X3tIfF0T5xTIUAKKJZAkRESABRAJYFqfXY6AABJACABAJl6QABAowAEwwFIAA5RAIo2JKCABCCCLIASQCWBDIBmHKY0FxrwuP/N5yOBF1+CG1/9Bg586MNd3v34xwv96Mc+/9nPfeMzn/rWpz71nU984kc/+q3f+OVf/9Wv/MKv/PzP/MKnf+Xnv/zzv/L1L33lt375V3/mV3/uF3/uZ371p372U7/wkU986pOf/MSnPvGJT/zsjzzxU//3tz/0Dz70t/7h/7z/f376b/9P//qvL4HfBVxGnFEwMEgJGI0rZbQORB2xfzwCYBHBVJU0sGAINTDAUKI2HY64wwVHRECH1jWgJYFkWaBCSIEwQKIGWAQZgIg0IkE40HnIlFNMEXhANPTI5XvGIw+M5pHJ1OGJDfyLAJXzCdSKoEBAFTRIpNFQCMAC6JAjaCwDJRNMQpJRQRJKKSRIiqQShSTQtF6EtD5qFv2pwgAALOg8j/wQaF8IANOlFJ6EAUPh3tN7A6LFrKAJ1BQEMQAADWgMWJjqhQICAEjwEAYAPSgK7I2OxnJIw6AoCkI69BYjAABP0CKYAAAEIoQJAFxAlJjPK7iAEAJ5UJygANEglQxJ0IOqA8XSEAJ4gfwCAN5aP+sDYJxS1gAAAiLAgE6jJkwghQQOcDwAAMBA/D4AGoBl6CwDBAJg2ANKkEr2e4BMEACAACBBC42GEMAFQIoT1EtC7YC2BOhLYEmC7gT2JrAfgQMJHEHgaAKnEDiLwLkEriRwA4E7CLyfwIcIPErgWQKfIfAigdcJvE3gPQJfE/iJwJ8E/gJSwAWugBdYIR7JVIGJbLbbbn7vXQ++8Ky3fOLlb375Oz/+r588+8Ov/PB3fvPnvvhPf/6HP/G5L3/1O9/+4b/+5JkpPpFetIvZMM03v+f+3/2dxyiBk0BgAAASgCwwAQBYLkC7YBQASgaArjg4M8hQICWTIYMJFliBWiqpDCNwR8IhjKBLBilKJskIkkK7cVAqWhYB0AvCgU6IkoES4YDAh6wYKoMUiqCRCr3QQEcIWoLQFaQJLIACZJOiQNQ4GKQFB5QvQT0IkqpQIAkhVBAEIUKWI6ogKIEggc4rQIUuQUgz/5MDNBIAmMhPVqULVQEAsJx0PgAcOVXoA0D4FBnI/i5ALYBAjMj4yRYP8/gHdLl5/IlXF+Wd+f/xJ8qBcOgVvscj+P+wFpHFIxIjCQEALBSPAAQaKUMAjUYdgCE4EqIFqJUKGRUGQo0eACklC3pKVYCgjFRKiZKjkr0AENhJAQ4qhaZBIJq5RKMAnkIUgKZxiTJJCWqQKTNAKnQ9QgiNAwB6Xh/AEioV9icAKXQdQsYS6gAUQ+DYEvQ0QWMJ2kogC9BYCNIIEQ8IAYAsiwI4yqRAPqRCJwUm6ADoJAQAIkGWLgAEY4IJCigQGOhk1ILBiQ9SgISNKghCoJcjShIk0INeUlDJAuABKwmCJBkEkCICkR4BQSMJNIigTQSwEIKWlAqlMaYIFNKRxJCGQWbcgkGDAUjLQCMgWMSLI4nRoWYUAikMg6ASBKLkY/RAhRxpSMNAS7KuE6QCACghgGiJkKgTwAhaSqHTRCFI4m2fELKkIKRUDNCAVAgAvyQWRdBgQR9FcINBAsALAQnCEJUOGSIlDkgSEzKEAHAQVPo/+u9lXLUGAAjkL3VFv2kAAACCBiH8n2k3l/5hgQVyINDIAQBQCBJokEAQpGhAlIiUSChTYCIQC0oJGqTxqrHqASZBQFRBM1KrKI50NCI5wkmF3kQIYJKQOhwlYghqmgEJ8gBRUqwIqrJ/q2jyA/lIkgJ5kAwS9ARoIWgAaJIAJEqCSCkGgBSEChGaHJGEQgJnQZKASLSEJIigJSBKhKBJgqYJukyQxUv0/wIGgSAU4gTiJAqoGCQKtJAgiVCVAq3kCmolQgiVUigJRqUSJVVBiQJBKolIBAgkCIKUKAGkqkQCACRaIlTJEKLQQCsqI0iJqAJApkJUBFQJ4AFkSgAJABADCQWyBCEoCUIqgQg1IhKJHAEKdClS6DlQFQnASxQg8FLJJBBAJhB0kiBAJpWKi/AASiUpAOglKRIRwJMKhJQAiVJ0BQBKlaQCJUqJ0BUBJBIRAGQqUGWSoFFFkhIglaSSSJBqS6EyBKlIKpGiCgG8lCKROADKJCoJAEAIoSQJIgBA0iSAJEl1gCBIJZWoCiQEgqpUBBWCopRUJQYAMhUAUkkUVAKEEIhACgUgKgmCLEICABQSoUuySgWgKqiQqBQBQFaoSqFKhSCoJJAohUCqKABAAIAgCIKsSYJSohQAFJIiSAUAlQCJKpCgAwAlJCkoAJBIJUqJ1ANA0BBSkiQlAhAEohIQBBBSQ0EEwKpEhUCpQqFKAoIgaVQhAJAqIkICQJSqIKiSqCRAJYEsKlEQhKqUAH0MqBIg0wgUkAKAUixJBaRIkECiIEMFgMRBBoAAyHQKqTSQCKpEJUmJAKhSFaCKIACSIkCJSiECIABCkIBQoJIkCZIiARIASiEIQKZCqiCIgiQFgYgQJABECEiqMKJSKKXCKbKiKJKkqJIqBQCNSgFSUSQqBQCRIhHAqQCASCULQEMIgRQCQa1QQIZEFYUChCAJAlQCgUIqQKNKUAFAIgIAhVQBiECqqJQgKKSSEIEIJRKVqFQJCCqJUChFQ1QSAKokAYlAQgggaKQCCADIOkGShAKpJAFFAqUKVYKuVIhKoUBYCJASVABQSSACQCIVwJMqhVQqBEkqAdQSgkQQBJVEBSBkChBSAaASCkKIAoBKARAEhZQkYUQBQCIJJABApihIAJApiqJIJWoAilQilAqqBNRChQoAAKJSggIASRNKJYCAVCAkAkQQAJQSJQilklQBQCBJrASKUICUooQClYIkAUFKkhIgEyFRAGiqFAGySiEACoEklZIqhECASKIkSAWSIJFaBYBcCgRAJQEABEkBSiVJQQGoJIEsAXA6maoAQCcBANaglKwKCuC1IlAAKBQKJQDqZEFWAQQQ5FIh0DUKPYBKAYBUoipQAABPIhCKJBWSlIBKAFCoECQNQaICOIJMEkqIioSgAYCQCqUUJYAQqRIgCoKSSALIJCJQ8YRSRCJIJEEmJPCoIiFKJEIBElVKFQCCoKikAlEigJMIoYLAQSqokKgUQCYhKgCiRAglqkSIAAAhUYEgSoBKAACJKhRKVSiJUAmBIgCJSiLBBQFKkiSCJgmgoYgqAAQBQCWVqqRSARIBAAEAqSDJqiRQQ9EJAKRSEZAKJCBIhCAJIJVOBZCJ0KRAVAgkSRIBAIEEQIISJAAgAUEJFYIgiYBMKokgIyQSCkCJgCoFoCgEKgCABBIlUCRKBYBCAYIsCZQsASRKBaJKkMlEkBQACJokQKqCBBYVQioAlEqBIEmmQIICASIJAAB4iqRIugC8RKhAxJNJAggCiQACCFIAABJAJgAgiSoBopACHACoFACoJEEFSqRCAihKqSABQKJUkCVIACBIqgQglIhUgahRQoIgSwJJKoAoBACAIACVhCwLAOCSAIJEKZCQCgUIUCmQKKTyBKVSqFCpIgFUEiBTCQCgEMAIGqgAglQBgEpQQYIqA0AmWdWJFQCYVKGKAJFIJUEmEQUhBRAEVQGAFJEIIBIiQKUAAFUBgFRBCVMBqEphBB0AFKgCaKQCTgKQCKAKQCMVJABIhagIAKASCYBCKpCqAFABKFECgFSAilIqFQASYSqALAFyASAFgCQqAQQgSEKhRICQKJUGwYAqSihQZYJQaiJAAUiVAqIKAElKkAAqCQC8lAAJISQhSwRNAUJSBBwJVQhEILEShUICCQAg6KVQCQA0KqkCQAAqhQgAkCkCgBCqJAgShSIVACIFAIICAEmiIsgUQAOyBNBIJGkSSgCAKhEghJBICABJkQRJRQJIlUIJCZII0ApFAQ1FKAQCgJYAAMi8VAiYJJBKBUoBoJIKoSqEIJJSElQACqVKIkImCQFkAgCZFACq0JRAgQQACiJJgCIAOJJMoJECYFcSwAO0xAi0UChJChIASQJBDABEQOCgV2mqQKKkAAAkJaCSSARAAUKoSgUoUQJEKQCiCgQALSEIKECGSqICFSCRAAJJBQJJhJYkFQA0AUABIU/ICpAoFYIkCQBYIAIYSYAOlBIBkiAkKgAlqCQAJJIKAJEoVQFkKoAQilAqIQCELECAAImQAFQlAVWikqgEggQgqhgFQigRIFMCAAtJIBIKUCkAtAIAqdJJqgIIAoDDEaUCADgpASBKlABgFJAKCaRKQFCESiCBBIJcAAkkgiRRUAIqBQBKJQAlqkAmAlRKCaCAJgiAIoEAIciiAkAVACSQKgCAWlEJJFJBBACAJCQARIQElCJB1CglAFBJkgCJAkCSAACQEgQJAEBWAFCoRElUslpKKQKSkCIAQCaSACAJMEAiAABRIlAJBDgBBBAqBQBQAgQBgJSqQCYBVBIAQCoAAIQKAMCpAIBIEgQAIYggQYIgCAACKQRJkggAkqASqJIKQKIIlQBQSgCAFCqQACoVALIKMhBCKjWApJJFJSoVAAqBLFMAoFQkACqVCoBSKRCCIAGJBAAglQC6RKFBqFJJgkQUqBIgk0iCDqpSAEgFEkkAACpJAqUkaCUJSipVJBUAqCQVkKBKRAAphEACCRgkACQJSgAERUACgSyJKgAQKoWqlKgAtAgBIgkKBSiJCFIokQgACKQKJClJiSQqBTAKAAVCAYRKAIAEQJCoJIJAAIBCkFQAaKWSCpQSgCSF1EJRCEqlklIogFIIgAoBUAkBQCqqAAChAlQBIFMqACCBBACqREgAQCKIKhKkIAAJJJKqAJBCKkkLAFJJJAUAUqEqAaKCAkqVhKhKAAqFCgAJJQlQSVACAiUhSIIAYIhQASEVAECpAioAJSoJqFIQUKUKAHmQ/V8BiEoCpYiiQCbxACACVSJQQCVFIgGAIqUqgCAJVYEkASRKJQWQKASCIoSSJCqJIBAgACRAJwUACqEgAkgkASRSCQBMQJAIJRBQQpQQBYAKjSJJQBSpACoAgEAKFZQQQlEASAGoJAAoJFGpCqGRSgUAEACAIpKEggAVlUqiQNBIlYCkVEgQkqoEkqJIqgKARJIEKolAIkBIkQRAVQqCKqoCgChJAqIkYQJQCYBMACBJKqUAqhKqAkBBAQASJRRBkkRRAECqAqEqCdJIpZACAQRSkqQCVBIJgiQBAACppFQCAEgKJRQAEADAKwQCAQBOJRECQBUC0GkVQK4qpRKqJCKASgJVKAASiYKUJACgVAgANFJJARKJAgA1SkKmCqkkAKQCTiIUQqgSJECuSARAhQKJJBABYElJChEAQKlEIEmlqkpRqRIEqlIoFUCVhFKoKg1ABJIqQKkQBUJJKhABEolKhSA0BCQCVAFAIQEAJQAC0BCSpJJUoiiJSgVJVSCUCgClRKJSIYAqCBRSAchUQgVVKgAghFQqKiRJBQCNChJJQhUopKQEQGgIIpGkAMBBAaiSqJQkASRBkCgCCYJESlYAqiQBABKJCnRCAECiAABKhQIJJABAJQGCRCEBgEoRAJVKqJIoCAICUCilFCmAVKoIJUoCADQSBFWKoEqCAECAIAEJAaBUIUBIiQJIJQCAIhVIVEoAgIAgIIQqAKAQAIIqVSUAoFIAAEAqFQAQSCURFIogkQqSJKkAIJEEQhUCABZSokACJFUSCJJMIgAAoAAAkpAAAJ4qBIhUCRQAKhUAtFCEklRAkCgIkEKqBKBCACRQSRUJQoJEIoBMpQKJIoEABFJJBAlUEgBUKQCQSJRUqQqSIqhSAlAtVSEIqhKiqhQIUCmAAgGQBABwAABKUQCAWhQAQKEqBSCpABAqJUoUAJBIlVKlBCKkAAAkEqkgCFWiokAmiVICqCQBdBIJUKokAFCJgkQjUUgiUNASIBCCAhQCAQKASiKQCqEAQCMkKJGgUgJARSKVDlVJAAQA0KhKApVKoRIIJCkJAKBKiUQlEASFhCpQohIAQCWRAlJJAEAlJQsEqaSIIhGoFCBQKhEKAJ4KAIC0kAAggCqUACKJUCpRAMBTVBKJQAAgkhQAKJWgEgCgUioEkAqkEgCoJQCAHJGo1EoQQKECVOokKJRQICQKACIhJFCoEkAAkAQJIIkAAJECAJJCIhGoFIBAKgQICACSIAAoJQIUkqgkAICiUiKASlQgJFIpASCJVKBUEqKkKqEKSZIASBQBFSIAoFIhQCICKKEgRSqJogCJIKgAgEQCiJQEQBEBVIoCAAAKJUimqCSALqRKpVJJBQBQKAAhEUAlCVAqACVKJQFAlAoAyAWQEgKgUCKJUgRBIuuQVBKAQkqgUkIAAPL/Kj8=) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100%;
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 60px;
+  }
+
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 80px 20px;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(81, 221, 125, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .logo-wrap {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-name {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  .brand-name span {
+    background: linear-gradient(135deg, #51dd7d 0%, #3ba55d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .brand-name sup {
+    font-size: 0.4em;
+    color: #51dd7d;
+    -webkit-text-fill-color: #51dd7d;
+  }
+
+  .cover .divider-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #51dd7d, #3ba55d);
+    margin: 25px auto;
+    border-radius: 2px;
+  }
+
+  .cover h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 20px 0;
+    color: #fff;
+    max-width: 700px;
+    line-height: 1.3;
+  }
+
+  .cover .subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-bottom: 50px;
+  }
+
+  .meta-info {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #888;
+    font-size: 0.9rem;
+  }
+
+  .meta-item .dot {
+    width: 6px;
+    height: 6px;
+    background: #51dd7d;
+    border-radius: 50%;
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #51dd7d, #3ba55d, #51dd7d);
+  }
+
+  .inner-section {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 50px;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+
+  .inner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(81,221,125,0.3), transparent);
+  }
+
+  .cover + .inner-section::before {
+    display: none;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .page-header .brand-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+  }
+
+  .page-header .brand-text sup {
+    font-size: 0.6em;
+    color: #51dd7d;
+  }
+
+  .page-header .section-label {
+    font-size: 0.85rem;
+    color: #51dd7d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  .section-title span {
+    color: #51dd7d;
+  }
+
+  .section-desc {
+    color: #999;
+    font-size: 1rem;
+    margin-bottom: 35px;
+    max-width: 600px;
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(81,221,125,0.2);
+    transform: translateY(-2px);
+  }
+
+  .glass-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .glass-card h3 .icon {
+    font-size: 1.3rem;
+  }
+
+  .glass-card p, .glass-card li {
+    color: #aaa;
+    line-height: 1.8;
+  }
+
+  .glass-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .glass-card li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .glass-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #51dd7d;
+  }
+
+  .highlight {
+    color: #51dd7d;
+    font-weight: 500;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 25px 15px;
+    background: rgba(81,221,125,0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(81,221,125,0.1);
+  }
+
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #51dd7d;
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .tech-tag {
+    background: rgba(81,221,125,0.1);
+    color: #51dd7d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(81,221,125,0.2);
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .module-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .module-item:hover {
+    border-color: rgba(81,221,125,0.3);
+    transform: translateY(-3px);
+  }
+
+  .mod-num {
+    font-size: 0.75rem;
+    color: #51dd7d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .module-item h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .module-item p {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 30px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #51dd7d, #3ba55d);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -40px;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #51dd7d, #3ba55d);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(81,221,125,0.3);
+  }
+
+  .timeline-content {
+    flex: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .duration {
+    font-size: 0.8rem;
+    color: #51dd7d;
+    font-weight: 500;
+  }
+
+  .pricing-card {
+    background: linear-gradient(135deg, rgba(81,221,125,0.1), rgba(59,165,93,0.05));
+    border: 2px solid rgba(81,221,125,0.3);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .price-label {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+  }
+
+  .price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #51dd7d;
+    margin-bottom: 10px;
+  }
+
+  .price .currency {
+    font-size: 1.2rem;
+    color: #888;
+    vertical-align: super;
+    margin-right: 5px;
+  }
+
+  .price-note {
+    font-size: 0.95rem;
+    color: #aaa;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(81,221,125,0.15), rgba(59,165,93,0.08));
+    border: 1px solid rgba(81,221,125,0.3);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .cta-box p {
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  .cta-box .cta-email {
+    color: #51dd7d;
+    font-weight: 600;
+  }
+
+  .page-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .cta-final {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .cta-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  .cta-workana-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #51dd7d, #3ba55d);
+    color: #0a0a0a;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(81,221,125,0.3);
+  }
+
+  .cta-workana-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(81,221,125,0.4);
+  }
+
+  @media print {
+    html { background: #fff; color: #1a1a1a; }
+    body { padding: 40px; }
+    .cover { min-height: auto; padding: 60px 20px; }
+    .inner-section { background: #f8f8f8; border-color: #e0e0e0; }
+    .glass-card { background: #fff; border-color: #e0e0e0; }
+    .page-header .brand-text { color: #333; }
+    .page-header .section-label { color: #2a9d4e; }
+    .section-title { color: #1a1a1a; }
+    .section-title span { color: #2a9d4e; }
+    .section-desc, .glass-card p, .glass-card li { color: #555; }
+    .stat-item { background: #f0f7f2; }
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 30px 20px; }
+    .inner-section { padding: 30px 25px; }
+    .page-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .page-header .brand-text { font-size: 0.9rem; }
+    .page-header .section-label { font-size: 0.75rem; }
+    .section-title { font-size: 1.6rem; }
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .module-grid { grid-template-columns: 1fr; }
+    .price { font-size: 2.5rem; }
+    .meta-info { flex-direction: column; gap: 15px; }
+    .cover h1 { font-size: 1.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .inner-section { padding: 25px 20px; }
+    .glass-card { padding: 20px; }
+    .timeline { padding-left: 35px; }
+    .timeline-dot { left: -35px; width: 22px; height: 22px; font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="logo-wrap">
+    <div class="brand-name">Marketing <span>VIP</span><sup>®</sup></div>
+  </div>
+  <div class="divider-line"></div>
+  <h1>Web Corporativa CX & Mystery Shopping</h1>
+  <p class="subtitle">Diseño profesional · SEO optimizado · Gestión de contenidos</p>
+
+  <div class="meta-info">
+    <div class="meta-item">
+      <span class="dot"></span>
+      Cotización #1009
+    </div>
+    <div class="meta-item">
+      <span class="dot"></span>
+      Febrero 2026
+    </div>
+    <div class="meta-item">
+      <span class="dot"></span>
+      Workana
+    </div>
+  </div>
+
+  <div class="bottom-bar"></div>
+</section>
+
+
+<section class="inner-section">
+  <div class="page-header">
+    <span class="brand-text">Marketing VIP<sup>®</sup></span>
+    <span class="section-label">Sobre nosotros</span>
+  </div>
+
+  <div class="section-title">¿Quiénes <span>somos?</span></div>
+  <p class="section-desc">Somos una agencia tech con más de 12 años impulsando negocios a través de la tecnología y el marketing digital.</p>
+
+  <div class="glass-card">
+    <h3><span class="icon">⚡</span> Marketing VIP — Agencia de Tecnología y Marketing Digital</h3>
+    <p>Creamos experiencias digitales que conectan marcas con sus audiencias. Especializados en desarrollo web corporativo, e-commerce y estrategias de posicionamiento SEO.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-item">
+      <div class="stat-num">+1000</div>
+      <div class="stat-label">Proyectos</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Años</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">99%</div>
+      <div class="stat-label">Satisfacción</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Soporte</div>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <h3><span class="icon">🛠</span> Nuestro Stack Tecnológico</h3>
+    <div class="tech-row">
+      <span class="tech-tag">WordPress</span>
+      <span class="tech-tag">Elementor Pro</span>
+      <span class="tech-tag">PHP</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Tailwind CSS</span>
+      <span class="tech-tag">Figma</span>
+      <span class="tech-tag">SEO Técnico</span>
+      <span class="tech-tag">Google Analytics</span>
+      <span class="tech-tag">Search Console</span>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <h3><span class="icon">🎯</span> ¿Por qué elegirnos?</h3>
+    <ul>
+      <li>Diseño 100% personalizado acorde a tu identidad de marca</li>
+      <li>Desarrollo responsive optimizado para todos los dispositivos</li>
+      <li>SEO técnico integrado desde la estructura inicial</li>
+      <li>Panel de administración intuitivo para gestionar contenidos</li>
+      <li>Soporte post-entrega incluido</li>
+    </ul>
+  </div>
+
+  <div class="page-footer">
+    <span>Marketing VIP® — Propuesta Comercial</span>
+    <span>Página 1</span>
+  </div>
+</section>
+
+
+<section class="inner-section">
+  <div class="page-header">
+    <span class="brand-text">Marketing VIP<sup>®</sup></span>
+    <span class="section-label">Solución propuesta</span>
+  </div>
+
+  <div class="section-title">Secciones de la <span>web</span></div>
+  <p class="section-desc">Estructura completa para presentar tus servicios de Customer Experience, Mystery Shopping y Mystery Digital de forma profesional.</p>
+
+  <div class="module-grid">
+    <div class="module-item">
+      <div class="mod-num">Sección 01</div>
+      <h4>Home / Inicio</h4>
+      <p>Hero impactante, presentación de servicios, casos de éxito destacados y llamadas a la acción estratégicas.</p>
+    </div>
+    <div class="module-item">
+      <div class="mod-num">Sección 02</div>
+      <h4>Servicios CX</h4>
+      <p>Descripción detallada de Customer Experience: metodología, beneficios y cómo mejora la satisfacción del cliente.</p>
+    </div>
+    <div class="module-item">
+      <div class="mod-num">Sección 03</div>
+      <h4>Mystery Shopping</h4>
+      <p>Explicación del servicio de cliente oculto: proceso, informes, métricas y valor para el negocio.</p>
+    </div>
+    <div class="module-item">
+      <div class="mod-num">Sección 04</div>
+      <h4>Mystery Digital</h4>
+      <p>Evaluación de la experiencia digital del cliente: auditorías web, análisis de competencia y recomendaciones.</p>
+    </div>
+    <div class="module-item">
+      <div class="mod-num">Sección 05</div>
+      <h4>Casos de Éxito / Portafolio</h4>
+      <p>Galería de proyectos realizados con testimonios de clientes y resultados obtenidos.</p>
+    </div>
+    <div class="module-item">
+      <div class="mod-num">Sección 06</div>
+      <h4>Blog</h4>
+      <p>Sección de artículos para compartir contenido relevante del sector y mejorar el posicionamiento SEO.</p>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <h3><span class="icon">📬</span> Sección 07 — Contacto</h3>
+    <p>Formulario de contacto profesional con campos personalizados, integración con email y posibilidad de conectar con CRM.</p>
+  </div>
+
+  <div class="glass-card">
+    <h3><span class="icon">📄</span> Páginas Adicionales</h3>
+    <ul>
+      <li><span class="highlight">Sobre Nosotros:</span> Historia de la empresa, equipo, misión y valores</li>
+      <li><span class="highlight">Footer completo:</span> Enlaces rápidos, redes sociales, información legal</li>
+      <li><span class="highlight">Política de Privacidad:</span> Página legal requerida para RGPD</li>
+    </ul>
+  </div>
+
+  <div class="page-footer">
+    <span>Marketing VIP® — Propuesta Comercial</span>
+    <span>Página 2</span>
+  </div>
+</section>
+
+
+<section class="inner-section">
+  <div class="page-header">
+    <span class="brand-text">Marketing VIP<sup>®</sup></span>
+    <span class="section-label">Cronograma e inversión</span>
+  </div>
+
+  <div class="section-title">Plan de <span>ejecución</span></div>
+  <p class="section-desc">Metodología ágil con entregas parciales para que puedas ir validando el avance en cada etapa.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">1</div>
+      <div class="timeline-content">
+        <h4>Descubrimiento y Planificación</h4>
+        <p>Análisis de requerimientos, definición de estructura, wireframes y arquitectura de información.</p>
+        <span class="duration">Semana 1</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="timeline-content">
+        <h4>Diseño UI/UX</h4>
+        <p>Diseño visual completo en Figma: home, páginas internas, responsive. Iteraciones hasta aprobación.</p>
+        <span class="duration">Semana 2-3</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="timeline-content">
+        <h4>Desarrollo WordPress</h4>
+        <p>Maquetación del diseño aprobado, configuración de plugins, optimización de velocidad y SEO técnico.</p>
+        <span class="duration">Semana 4-5</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="timeline-content">
+        <h4>Contenido y Testing</h4>
+        <p>Carga de contenidos finales, pruebas en múltiples dispositivos, optimización final y entrega.</p>
+        <span class="duration">Semana 6</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-card">
+    <div class="price-label">Inversión total del proyecto</div>
+    <div class="price"><span class="currency">USD</span> 1,200</div>
+    <div class="price-note">Incluye diseño UX/UI + desarrollo WordPress + SEO básico + 30 días de soporte post-entrega</div>
+  </div>
+
+  <div class="glass-card">
+    <h3><span class="icon">💳</span> Forma de Pago</h3>
+    <ul>
+      <li><span class="highlight">40%</span> al iniciar el proyecto — USD $480</li>
+      <li><span class="highlight">30%</span> al aprobar diseño UX/UI — USD $360</li>
+      <li><span class="highlight">30%</span> al finalizar y entregar — USD $360</li>
+    </ul>
+  </div>
+
+  <div class="page-footer">
+    <span>Marketing VIP® — Propuesta Comercial</span>
+    <span>Página 3</span>
+  </div>
+</section>
+
+
+<section class="inner-section">
+  <div class="page-header">
+    <span class="brand-text">Marketing VIP<sup>®</sup></span>
+    <span class="section-label">Alcance y entregables</span>
+  </div>
+
+  <div class="section-title">¿Qué <span>incluye?</span></div>
+  <p class="section-desc">Todo lo necesario para que tu web esté lista para captar clientes y posicionar tu marca.</p>
+
+  <div class="module-grid">
+    <div class="glass-card" style="margin:0">
+      <h3><span class="icon">🎨</span> Diseño</h3>
+      <ul>
+        <li>Diseño UI/UX personalizado en Figma</li>
+        <li>Versión desktop + tablet + móvil</li>
+        <li>Hasta 3 rondas de revisiones</li>
+        <li>Entrega de archivos editables</li>
+      </ul>
+    </div>
+    <div class="glass-card" style="margin:0">
+      <h3><span class="icon">⚙️</span> Desarrollo</h3>
+      <ul>
+        <li>WordPress + Elementor Pro</li>
+        <li>7 secciones/páginas completas</li>
+        <li>Formulario de contacto funcional</li>
+        <li>Blog con categorías</li>
+      </ul>
+    </div>
+    <div class="glass-card" style="margin:0">
+      <h3><span class="icon">🔍</span> SEO & Performance</h3>
+      <ul>
+        <li>SEO técnico on-page</li>
+        <li>Optimización de velocidad</li>
+        <li>Configuración de Analytics</li>
+        <li>Search Console integrado</li>
+      </ul>
+    </div>
+    <div class="glass-card" style="margin:0">
+      <h3><span class="icon">🛡</span> Garantía</h3>
+      <ul>
+        <li>30 días de soporte técnico</li>
+        <li>Corrección de bugs incluida</li>
+        <li>Tutorial de uso del panel</li>
+        <li>Documentación de entrega</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-box" style="margin-top:40px;">
+    <p>¿Listo para llevar tu empresa al siguiente nivel?</p>
+    <p>Escríbenos a <span class="cta-email">hola@marketingvip.co</span></p>
+  </div>
+
+  <div class="glass-card" style="margin-top:25px;">
+    <h3><span class="icon">📅</span> Validez</h3>
+    <p>Esta propuesta tiene validez de <span class="highlight">15 días</span> a partir de la fecha de emisión.</p>
+  </div>
+
+  <div class="cta-final" style="margin-top:30px; text-align:center;">
+    <p class="cta-label">Contrátame en</p>
+    <a href="https://www.workana.com/freelancer/3c7342412de95a79a3ac63d14ea69a0a" target="_blank" rel="noopener" class="cta-workana-btn">Workana</a>
+  </div>
+
+  <div class="page-footer">
+    <span>Marketing VIP® — Propuesta Comercial</span>
+    <span>Página 4</span>
+  </div>
+</section>
+
+</body>
+</html>
