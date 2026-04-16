@@ -107,6 +107,15 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 .footer-bar p{color:var(--gray3);font-size:12px;}.footer-bar span{color:var(--green);font-weight:600;font-size:12px;}
 @media(max-width:900px){.hero-body{flex-direction:column;padding:40px 24px;}.hero-right{width:100%;}.kpi-grid-6,.kpi-grid-5{grid-template-columns:repeat(3,1fr);}.kpi-grid-4{grid-template-columns:repeat(2,1fr);}.analysis-grid{grid-template-columns:1fr;}.container{padding:0 20px;}.hero-topbar,.hero-footer{padding:20px 24px;}}
 
+
+/* Facebook Page section */
+.kpi-card.fb-card{background:linear-gradient(135deg,#1e1a2e,#0f1627);border:1px solid rgba(124,58,237,.2);}
+.kpi-card.fb-card::after{background:linear-gradient(135deg,rgba(124,58,237,.07) 0%,transparent 60%);}
+.kpi-card.fb-card .kpi-lbl{color:#C4B5FD;}
+.fb-badge{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:#C4B5FD;font-size:10px;font-weight:600;padding:2px 8px;border-radius:12px;letter-spacing:.5px;text-transform:uppercase;}
+.analysis-block.fb-block{border-left-color:#7C3AED;background:linear-gradient(135deg,#f5f3ff,white 60%);}
+.note-warning{background:#FFF7ED;border:1px solid #FED7AA;border-radius:8px;padding:14px 18px;font-size:13px;color:#92400E;margin-bottom:20px;display:flex;gap:10px;align-items:flex-start;}
+
 /* comparativa */
 .delta-up{color:#22C55E;font-weight:700;}
 .delta-down{color:#EF4444;font-weight:700;}
@@ -385,11 +394,54 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 </section>
 
 <!-- SECCIÓN 2: META ADS API -->
+<!-- SECCIÓN 02: FACEBOOK PAGE ORGÁNICO -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-accent" style="background:#7C3AED"></div>
+      <div class="section-title-block">
+        <span class="section-num">02</span>
+        <span class="section-title">Facebook Page Orgánico — Arichy Real Estate</span>
+        <span class="fb-badge">● Facebook Page API</span>
+      </div>
+    </div>
+    <div class="note-warning">
+      <span style="font-size:16px;flex-shrink:0">⚠️</span>
+      <div><strong>Acción requerida para activar datos reales:</strong> La Fan Page debe vincularse al System User del Business Manager con permiso <code>pages_read_engagement</code>. Una vez hecho, este bloque mostrará alcance, impresiones, fans nuevos y engagement de forma automática cada mes.</div>
+    </div>
+    <p class="desc">Sección configurada y lista para recibir datos de <strong>Facebook Page API</strong>. Las métricas que se mostrarán automáticamente al activar son:</p>
+    <div class="kpi-grid kpi-grid-4">
+      <div class="kpi-card fb-card"><div class="kpi-val" style="font-size:22px;opacity:.3">—</div><div class="kpi-lbl">Alcance orgánico página</div><div class="kpi-vs">Pendiente Page Token</div></div>
+      <div class="kpi-card fb-card"><div class="kpi-val" style="font-size:22px;opacity:.3">—</div><div class="kpi-lbl">Impresiones totales</div><div class="kpi-vs">Pendiente Page Token</div></div>
+      <div class="kpi-card fb-card"><div class="kpi-val" style="font-size:22px;opacity:.3">—</div><div class="kpi-lbl">Fans nuevos en el mes</div><div class="kpi-vs">Pendiente Page Token</div></div>
+      <div class="kpi-card fb-card"><div class="kpi-val" style="font-size:22px;opacity:.3">—</div><div class="kpi-lbl">Engagement total</div><div class="kpi-vs">Pendiente Page Token</div></div>
+    </div>
+    <div class="analysis-grid">
+      <div class="analysis-block fb-block">
+        <div class="analysis-title">📊 Qué se jalará: Alcance & Impresiones</div>
+        <div class="analysis-text">Alcance orgánico de la página, impresiones totales, visitas al perfil y reproducciones de video orgánicas del mes completo vía <code>page_impressions</code>, <code>page_reach</code>.</div>
+      </div>
+      <div class="analysis-block fb-block">
+        <div class="analysis-title">👥 Qué se jalará: Crecimiento de audiencia</div>
+        <div class="analysis-text">Fans nuevos (<code>page_fan_adds</code>), fans perdidos (<code>page_fan_removes</code>) y total de seguidores de la página en el período.</div>
+      </div>
+      <div class="analysis-block fb-block">
+        <div class="analysis-title">❤️ Qué se jalará: Posts de Facebook</div>
+        <div class="analysis-text">Tabla de publicaciones del mes con alcance, impresiones y usuarios comprometidos por post, incluyendo imagen de portada y enlace directo.</div>
+      </div>
+      <div class="analysis-block fb-block">
+        <div class="analysis-title">🔧 Cómo activarlo</div>
+        <div class="analysis-text">Business Manager → Configuración → Usuarios del sistema → asignar Fan Page al System User con permiso <strong>pages_read_engagement</strong>. El siguiente informe lo activa automáticamente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div class="section-header">
       <div class="section-accent" style="background:#3B82F6"></div>
-      <div class="section-title-block"><span class="section-num">02</span><span class="section-title">Meta Ads — Campaña Paga</span><span class="api-badge">● Meta Ads API</span></div>
+      <div class="section-title-block"><span class="section-num">03</span><span class="section-title">Meta Ads — Campaña Paga</span><span class="api-badge">● Meta Ads API</span></div>
     </div>
     <p class="desc">Datos de campañas pagadas obtenidos directamente de <strong>Meta Ads API</strong>. La campaña activa "Interacción con perfil" tiene resultados excepcionales para el segmento de lujo.</p>
     <div class="kpi-grid kpi-grid-6">
@@ -438,7 +490,7 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 <!-- SECCIÓN 3: MAIL MARKETING -->
 <section class="section" style="background:white;padding-top:56px">
   <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">03</span><span class="section-title">Mail Marketing — Secuencia Brevo</span></div></div>
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">04</span><span class="section-title">Mail Marketing — Secuencia Brevo</span></div></div>
     <p class="desc">Cadencia semanal activa con <strong>3 correos de la secuencia numerada</strong> más 1 comunicado extra de Semana Santa. La secuencia lleva a los inversores desde awareness hasta consulta privada.</p>
     <div class="kpi-grid kpi-grid-4">
       <div class="kpi-card"><div class="kpi-val">4</div><div class="kpi-lbl">Mails enviados</div></div>
@@ -461,7 +513,7 @@ tbody td{padding:11px 14px;vertical-align:middle;color:var(--black);line-height:
 <!-- SECCIÓN 4: PRÓXIMOS PASOS -->
 <section class="section">
   <div class="container">
-    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">04</span><span class="section-title">Próximos Pasos — Abril 2026</span></div></div>
+    <div class="section-header"><div class="section-accent"></div><div class="section-title-block"><span class="section-num">05</span><span class="section-title">Próximos Pasos — Abril 2026</span></div></div>
 
     <div class="next-section">
       <div class="next-header" style="border-left-color:#DB2777"><span style="font-size:18px">📸</span><span class="next-header-title">Instagram Orgánico</span></div>
