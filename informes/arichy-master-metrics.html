@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Metrics — Arichy Real Estate · Feb vs Mar 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A1A2E;--navy2:#0F1627;--green:#51DD7D;--green-dark:#1a9e50;
+  --gray1:#F1F5F9;--gray2:#E2E8F0;--gray3:#94A3B8;--gray4:#64748B;
+  --white:#FFFFFF;--black:#1E293B;
+  --up:#22C55E;--down:#EF4444;--neutral:#94A3B8;
+  --ig:#DB2777;--meta:#2563EB;--feb:#64748B;--mar:#51DD7D;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Geist',sans-serif;background:var(--navy2);color:var(--white);font-size:15px;}
+
+/* TOPBAR */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid rgba(81,221,125,.12);position:sticky;top:0;z-index:100;background:rgba(15,22,39,.95);backdrop-filter:blur(12px);}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.5px;}.logo span{color:var(--green);}
+.topbar-right{display:flex;align-items:center;gap:16px;}
+.api-pill{background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.35);color:#93C5FD;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;}
+.period-pill{background:rgba(81,221,125,.1);border:1px solid rgba(81,221,125,.25);color:var(--green);font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
+
+/* HERO */
+.hero{padding:56px 48px 48px;max-width:1200px;margin:0 auto;}
+.hero-eyebrow{color:var(--green);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--green);}
+.hero-title{font-weight:800;font-size:clamp(36px,4vw,58px);letter-spacing:-2px;line-height:1;margin-bottom:12px;}
+.hero-title em{color:var(--green);font-style:normal;}
+.hero-sub{color:var(--gray3);font-size:15px;font-weight:300;max-width:560px;line-height:1.6;}
+.legend{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray3);}
+.legend-dot{width:10px;height:10px;border-radius:50%;}
+
+/* SECTION */
+.section{max-width:1200px;margin:0 auto;padding:0 48px 56px;}
+.section-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--green);}
+.divider{height:1px;background:rgba(255,255,255,.06);margin:0 48px 48px;}
+
+/* MASTER KPI GRID */
+.master-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
+.master-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px 20px;position:relative;overflow:hidden;transition:border-color .2s;}
+.master-card:hover{border-color:rgba(81,221,125,.3);}
+.master-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(81,221,125,.03) 0%,transparent 60%);pointer-events:none;}
+.mc-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray3);margin-bottom:12px;font-weight:500;}
+.mc-val{font-weight:800;font-size:36px;letter-spacing:-1.5px;line-height:1;margin-bottom:10px;}
+.mc-val.up{color:var(--green);}
+.mc-val.neutral{color:var(--white);}
+.mc-compare{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.mc-delta{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.mc-delta.up{background:rgba(34,197,94,.15);color:var(--up);}
+.mc-delta.down{background:rgba(239,68,68,.12);color:var(--down);}
+.mc-delta.flat{background:rgba(148,163,184,.1);color:var(--neutral);}
+.mc-prev{font-size:12px;color:var(--gray3);}
+.mc-source{position:absolute;top:16px;right:16px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;opacity:.5;}
+
+/* COMPARISON TABLE */
+.compare-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.03);border-radius:12px;overflow:hidden;margin-bottom:32px;}
+.compare-table thead tr{background:rgba(255,255,255,.06);}
+.compare-table thead th{padding:14px 18px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gray3);}
+.compare-table thead th:not(:first-child){text-align:center;}
+.compare-table tbody tr{border-top:1px solid rgba(255,255,255,.05);}
+.compare-table tbody tr:hover{background:rgba(255,255,255,.03);}
+.compare-table tbody td{padding:14px 18px;font-size:14px;color:var(--white);vertical-align:middle;}
+.compare-table tbody td:not(:first-child){text-align:center;}
+.metric-name{font-weight:600;color:var(--white);}
+.metric-cat{font-size:11px;color:var(--gray3);margin-top:2px;}
+.val-feb{color:var(--gray3);font-size:15px;}
+.val-mar{font-weight:700;font-size:16px;color:var(--white);}
+.delta-cell{font-weight:700;font-size:13px;}
+.delta-up{color:var(--up);}
+.delta-down{color:var(--down);}
+.delta-flat{color:var(--neutral);}
+.bar-cell{padding:10px 18px!important;}
+.bar-wrap{display:flex;align-items:center;gap:10px;}
+.bar-track{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;}
+.bar-fill-feb{height:100%;border-radius:3px;background:var(--gray3);transition:width .6s;}
+.bar-fill-mar{height:100%;border-radius:3px;background:var(--green);transition:width .6s;}
+.bar-label{font-size:11px;color:var(--gray3);min-width:32px;text-align:right;}
+
+/* VISUAL COMPARE BAR */
+.dual-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:48px;}
+.dbar-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 22px;}
+.dbar-title{font-size:12px;font-weight:600;color:var(--gray3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;}
+.dbar-item{margin-bottom:14px;}
+.dbar-item:last-child{margin-bottom:0;}
+.dbar-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.dbar-name{font-size:13px;color:var(--gray3);}
+.dbar-vals{display:flex;gap:12px;}
+.dbar-feb{font-size:12px;color:var(--gray3);}
+.dbar-mar{font-size:13px;font-weight:700;color:var(--white);}
+.dbar-track{height:8px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden;display:flex;}
+.dbar-f{height:100%;background:var(--feb);border-radius:4px 0 0 4px;opacity:.5;}
+.dbar-m{height:100%;background:var(--mar);border-radius:0 4px 4px 0;}
+
+/* INSIGHTS */
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px;}
+.insight-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px 22px;}
+.insight-icon{font-size:22px;margin-bottom:10px;}
+.insight-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.insight-text{font-size:13px;color:var(--gray3);line-height:1.6;}
+.insight-text strong{color:var(--green);}
+
+/* NOTE BOX */
+.note-box{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);border-radius:10px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;}
+.note-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.note-text{font-size:13px;color:#93C5FD;line-height:1.6;}
+.note-text strong{color:var(--white);}
+
+.footer{padding:24px 48px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;}
+.footer p{font-size:12px;color:var(--gray3);}
+.footer span{font-size:12px;color:var(--green);font-weight:600;}
+@media(max-width:900px){.master-grid{grid-template-columns:repeat(2,1fr);}.dual-bar,.insights-grid{grid-template-columns:1fr;}.topbar,.hero,.section{padding-left:20px;padding-right:20px;}.divider{margin:0 20px 40px;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Marketing <span>VIP</span>® &nbsp;·&nbsp; <span style="font-weight:400;color:var(--gray3);font-size:14px">Arichy Real Estate</span></div>
+  <div class="topbar-right">
+    <span class="api-pill">● Meta Graph API v19.0</span>
+    <span class="period-pill">Feb vs Mar 2026</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Master Metrics Dashboard</div>
+  <h1 class="hero-title">Rendimiento<em> Mes a Mes</em></h1>
+  <p class="hero-sub">Comparativa real de Instagram orgánico y Meta Ads entre febrero y marzo 2026. Datos obtenidos directamente vía API — sin exportaciones manuales.</p>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--gray3)"></div>Febrero 2026</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Marzo 2026</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--up)"></div>Mejora</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--down)"></div>Baja</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- MASTER KPIs -->
+<div class="section">
+  <div class="section-label">KPIs Principales</div>
+  <div class="master-grid">
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Alcance orgánico total</div>
+      <div class="mc-val up">2,933</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ +95.7%</span>
+        <span class="mc-prev">vs 1,499 en Feb</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Publicaciones en el mes</div>
+      <div class="mc-val up">12</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ +71.4%</span>
+        <span class="mc-prev">vs 7 en Feb</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Likes totales</div>
+      <div class="mc-val up">151</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ +46.6%</span>
+        <span class="mc-prev">vs 103 en Feb</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Shares totales</div>
+      <div class="mc-val up">71</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ +39.2%</span>
+        <span class="mc-prev">vs 51 en Feb</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Alcance promedio / post</div>
+      <div class="mc-val up">244</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ +41.0%</span>
+        <span class="mc-prev">vs 214 en Feb</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">IG API</div>
+      <div class="mc-label">Seguidores actuales</div>
+      <div class="mc-val neutral">1,889</div>
+      <div class="mc-compare">
+        <span class="mc-delta flat">● En seguimiento</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">META ADS</div>
+      <div class="mc-label">Gasto en pauta (USD)</div>
+      <div class="mc-val neutral">$112.13</div>
+      <div class="mc-compare">
+        <span class="mc-delta flat">● Camp. iniciada 17 Mar</span>
+      </div>
+    </div>
+
+    <div class="master-card">
+      <div class="mc-source">META ADS</div>
+      <div class="mc-label">Alcance pagado</div>
+      <div class="mc-val up">70,904</div>
+      <div class="mc-compare">
+        <span class="mc-delta up">▲ Nuevo en Mar</span>
+        <span class="mc-prev">$0 en Feb</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TABLA COMPARATIVA DETALLADA -->
+<div class="section">
+  <div class="section-label">Comparativa Detallada — Instagram Orgánico</div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th>Feb 2026</th>
+        <th>Mar 2026</th>
+        <th>Variación</th>
+        <th>% Cambio</th>
+        <th>Tendencia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="metric-name">Publicaciones</div><div class="metric-cat">Total de posts en el mes</div></td>
+        <td class="val-feb">7</td>
+        <td class="val-mar">12</td>
+        <td class="delta-cell delta-up">+5</td>
+        <td class="delta-cell delta-up">+71.4%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap">
+            <div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div>
+            <span class="bar-label">12</span>
+          </div>
+          <div class="bar-wrap" style="margin-top:4px">
+            <div class="bar-track"><div class="bar-fill-feb" style="width:58%"></div></div>
+            <span class="bar-label">7</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Alcance orgánico total</div><div class="metric-cat">Cuentas únicas alcanzadas</div></td>
+        <td class="val-feb">1,499</td>
+        <td class="val-mar">2,933</td>
+        <td class="delta-cell delta-up">+1,434</td>
+        <td class="delta-cell delta-up">+95.7%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div><span class="bar-label">2,933</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:51%"></div></div><span class="bar-label">1,499</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Alcance promedio / post</div><div class="metric-cat">Eficiencia por publicación</div></td>
+        <td class="val-feb">214</td>
+        <td class="val-mar">244</td>
+        <td class="delta-cell delta-up">+30</td>
+        <td class="delta-cell delta-up">+14.0%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div><span class="bar-label">244</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:88%"></div></div><span class="bar-label">214</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Likes totales</div><div class="metric-cat">Reacciones a publicaciones</div></td>
+        <td class="val-feb">103</td>
+        <td class="val-mar">151</td>
+        <td class="delta-cell delta-up">+48</td>
+        <td class="delta-cell delta-up">+46.6%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div><span class="bar-label">151</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:68%"></div></div><span class="bar-label">103</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Shares totales</div><div class="metric-cat">Contenido compartido</div></td>
+        <td class="val-feb">51</td>
+        <td class="val-mar">71</td>
+        <td class="delta-cell delta-up">+20</td>
+        <td class="delta-cell delta-up">+39.2%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div><span class="bar-label">71</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:72%"></div></div><span class="bar-label">51</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Comentarios</div><div class="metric-cat">Conversaciones generadas</div></td>
+        <td class="val-feb">2</td>
+        <td class="val-mar">2</td>
+        <td class="delta-cell delta-flat">0</td>
+        <td class="delta-cell delta-flat">0%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:100%"></div></div><span class="bar-label">2</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:100%"></div></div><span class="bar-label">2</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Guardados</div><div class="metric-cat">Posts guardados por usuarios</div></td>
+        <td class="val-feb">8</td>
+        <td class="val-mar">6</td>
+        <td class="delta-cell delta-down">–2</td>
+        <td class="delta-cell delta-down">–25.0%</td>
+        <td class="bar-cell">
+          <div class="bar-wrap"><div class="bar-track"><div class="bar-fill-mar" style="width:75%"></div></div><span class="bar-label">6</span></div>
+          <div class="bar-wrap" style="margin-top:4px"><div class="bar-track"><div class="bar-fill-feb" style="width:100%"></div></div><span class="bar-label">8</span></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="divider"></div>
+
+<!-- META ADS COMPARISON -->
+<div class="section">
+  <div class="section-label">Meta Ads — Campaña Pagada</div>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th>Feb 2026</th>
+        <th>Mar 2026</th>
+        <th>Variación</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="metric-name">Gasto total (USD)</div><div class="metric-cat">Inversión en pauta</div></td>
+        <td class="val-feb">$0</td>
+        <td class="val-mar">$112.13</td>
+        <td class="delta-cell delta-up">+$112.13</td>
+        <td class="delta-cell" style="color:var(--gray3);font-size:12px">Campaña inició 17 Mar</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Alcance pagado</div><div class="metric-cat">Personas únicas alcanzadas</div></td>
+        <td class="val-feb">0</td>
+        <td class="val-mar">70,904</td>
+        <td class="delta-cell delta-up">+70,904</td>
+        <td class="delta-cell" style="color:var(--gray3);font-size:12px">Primera campaña activa</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Impresiones</div><div class="metric-cat">Visualizaciones totales</div></td>
+        <td class="val-feb">0</td>
+        <td class="val-mar">126,290</td>
+        <td class="delta-cell delta-up">+126,290</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Clicks totales</div><div class="metric-cat">Al destino del anuncio</div></td>
+        <td class="val-feb">0</td>
+        <td class="val-mar">2,675</td>
+        <td class="delta-cell delta-up">+2,675</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">CPC (USD)</div><div class="metric-cat">Costo por click</div></td>
+        <td class="val-feb">—</td>
+        <td class="val-mar" style="color:var(--green)">$0.042</td>
+        <td class="delta-cell delta-up">Excelente</td>
+        <td class="delta-cell" style="color:var(--gray3);font-size:12px">Benchmark sector: $1.50–$3.50</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Video Views</div><div class="metric-cat">Reproducciones de Reels en pauta</div></td>
+        <td class="val-feb">0</td>
+        <td class="val-mar">6,707</td>
+        <td class="delta-cell delta-up">+6,707</td>
+        <td class="delta-cell" style="color:var(--gray3);font-size:12px">$0.017 por reproducción</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box" style="margin-top:16px">
+    <div class="note-icon">ℹ️</div>
+    <div class="note-text"><strong>Nota sobre la campaña:</strong> La campaña de Meta Ads se activó el 17 de marzo de 2026. Por tanto febrero no tiene datos de pauta. La comparativa real mes a mes de Meta Ads podrá hacerse a partir del informe de abril 2026, cuando se tenga el primer mes completo de campaña activa.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ALCANCE TOTAL: ORGÁNICO + PAGADO -->
+<div class="section">
+  <div class="section-label">Alcance Total Combinado — Orgánico + Pagado</div>
+  <div class="dual-bar">
+    <div class="dbar-card">
+      <div class="dbar-title">Febrero 2026 — Solo orgánico</div>
+      <div class="dbar-item">
+        <div class="dbar-row">
+          <span class="dbar-name">Instagram orgánico</span>
+          <div class="dbar-vals"><span class="dbar-mar">1,499</span></div>
+        </div>
+        <div class="dbar-track" style="background:rgba(255,255,255,.07)"><div class="dbar-m" style="width:2%;background:var(--gray3)"></div></div>
+      </div>
+      <div class="dbar-item">
+        <div class="dbar-row">
+          <span class="dbar-name">Meta Ads pagado</span>
+          <div class="dbar-vals"><span class="dbar-feb">0</span></div>
+        </div>
+        <div class="dbar-track"><div class="dbar-m" style="width:0%"></div></div>
+      </div>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:12px;color:var(--gray3)">TOTAL ALCANCE FEB</span>
+        <span style="font-weight:800;font-size:22px;color:var(--gray3)">1,499</span>
+      </div>
+    </div>
+
+    <div class="dbar-card" style="border-color:rgba(81,221,125,.2)">
+      <div class="dbar-title">Marzo 2026 — Orgánico + Pagado</div>
+      <div class="dbar-item">
+        <div class="dbar-row">
+          <span class="dbar-name">Instagram orgánico</span>
+          <div class="dbar-vals"><span class="dbar-mar">2,933</span></div>
+        </div>
+        <div class="dbar-track"><div class="dbar-m" style="width:4%;background:var(--ig)"></div></div>
+      </div>
+      <div class="dbar-item">
+        <div class="dbar-row">
+          <span class="dbar-name">Meta Ads pagado</span>
+          <div class="dbar-vals"><span class="dbar-mar">70,904</span></div>
+        </div>
+        <div class="dbar-track"><div class="dbar-m" style="width:96%"></div></div>
+      </div>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:12px;color:var(--green)">TOTAL ALCANCE MAR</span>
+        <span style="font-weight:800;font-size:28px;color:var(--green)">73,837</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-icon">🚀</div>
+    <div class="note-text">El alcance total pasó de <strong>1,499 personas en febrero</strong> a <strong>73,837 en marzo</strong> — un incremento del <strong>+4,826%</strong> gracias a la activación de Meta Ads. El orgánico por sí solo también creció un +96%.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- INSIGHTS ESTRATÉGICOS -->
+<div class="section">
+  <div class="section-label">Insights Estratégicos</div>
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="insight-icon">📈</div>
+      <div class="insight-title">Alcance orgánico casi duplicado</div>
+      <div class="insight-text">De 1,499 a 2,933 cuentas alcanzadas (+95.7%). El incremento se explica por <strong>5 publicaciones adicionales</strong> y por el post del Día de la Mujer que solo alcanzó 693 cuentas orgánicas.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🎯</div>
+      <div class="insight-title">Eficiencia por post mejoró</div>
+      <div class="insight-text">El alcance promedio por publicación subió de <strong>214 a 244</strong> (+14%). Esto significa que no solo publicamos más — cada pieza llegó a más gente que antes.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">📤</div>
+      <div class="insight-title">Shares: el indicador de valor</div>
+      <div class="insight-text">71 shares en marzo vs 51 en febrero (+39%). Para Real Estate de lujo, los shares son el indicador de intención más valioso — alguien que comparte una propiedad es un <strong>lead potencial</strong>.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">💡</div>
+      <div class="insight-title">Meta Ads: multiplicador x49</div>
+      <div class="insight-text">Con $112.13 USD, la pauta generó <strong>70,904 personas alcanzadas</strong> — 49x más que el orgánico del mes. CPC de $0.042 en el segmento de lujo es un resultado excepcional.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">💾</div>
+      <div class="insight-title">Guardados bajaron ligeramente</div>
+      <div class="insight-text">De 8 a 6 guardados (–25%). A pesar de publicar más, los guardados bajaron. Señal para incluir más <strong>contenido educativo tipo guía</strong> (Legal Guide, CONFOTUR, Roadmap inversión) que la gente quiere guardar.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🎬</div>
+      <div class="insight-title">Video: formato dominante</div>
+      <div class="insight-text">Los Reels generaron <strong>6,707 reproducciones pagadas</strong> a $0.017 c/u y lideran el alcance orgánico. Cada mes que se produzcan más Reels, el rendimiento total del canal mejora proporcionalmente.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRÓXIMO MES OBJETIVO -->
+<div class="section">
+  <div class="section-label">Objetivos Abril 2026</div>
+  <table class="compare-table">
+    <thead>
+      <tr><th>Métrica</th><th>Feb 2026</th><th>Mar 2026</th><th>Meta Abr 2026</th><th>Acción requerida</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="metric-name">Publicaciones</div></td>
+        <td class="val-feb">7</td><td class="val-mar">12</td>
+        <td style="font-weight:700;color:var(--green);text-align:center">14+</td>
+        <td style="font-size:13px;color:var(--gray3)">Mantener cadencia + Reels de colaboración</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Alcance orgánico</div></td>
+        <td class="val-feb">1,499</td><td class="val-mar">2,933</td>
+        <td style="font-weight:700;color:var(--green);text-align:center">3,500+</td>
+        <td style="font-size:13px;color:var(--gray3)">Más Reels + contenido humano/testimonial</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Shares</div></td>
+        <td class="val-feb">51</td><td class="val-mar">71</td>
+        <td style="font-weight:700;color:var(--green);text-align:center">90+</td>
+        <td style="font-size:13px;color:var(--gray3)">Contenido de propiedades más específico</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Guardados</div></td>
+        <td class="val-feb">8</td><td class="val-mar">6</td>
+        <td style="font-weight:700;color:var(--green);text-align:center">12+</td>
+        <td style="font-size:13px;color:var(--gray3)">Más guías educativas: Legal, CONFOTUR, ROI</td>
+      </tr>
+      <tr>
+        <td><div class="metric-name">Alcance pagado (Meta Ads)</div></td>
+        <td class="val-feb">0</td><td class="val-mar">70,904</td>
+        <td style="font-weight:700;color:var(--green);text-align:center">140,000+</td>
+        <td style="font-size:13px;color:var(--gray3)">Aumentar presupuesto a $5–10 USD/día</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p>© 2026 Marketing VIP® · Arichy Real Estate · Datos: Meta Graph API v19.0 + Instagram Graph API · Confidencial</p>
+  <span>marketingvip.co</span>
+</div>
+
+</body>
+</html>
